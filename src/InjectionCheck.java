@@ -11,7 +11,16 @@ public class InjectionCheck {
         String s1 = args[0];
         String s2 = args[1];
 
+        for(int i = 0; i < s1.length(); i++){
+            if(mappingCheck.containsKey(s1.charAt(i)) && mappingCheck.get(s1.charAt(i)) != s2.charAt(i)){
+                System.out.println("false");
+                System.exit(0);
+            }else{
+                mappingCheck.put(s1.charAt(i),s2.charAt(i));
+            }
+        }
 
+        System.out.println("true");
 
     }
 }
